@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">GADS Notchers</string>
+    <string name="project_submission">Project Submission</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="submit_button">Submit button</string>
+    <string name="submit">Submit</string>
+    <string name="intern_name">Intern Name</string>
+    <string name="intern_achievement">Intern achievement</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="project_link">Project on GITHUB (Link)</string>
+    <string name="field_cannot_be_empty">Field cannot be empty</string>
+</resources>
