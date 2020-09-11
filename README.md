@@ -34,9 +34,6 @@ There are **Top 20 learners in the Learning Leaders’** category and **Top 20 l
 </ul>
 
 
-If you learnt anything from the project kindly **star** and **follow**
-
-
 ## Author
 
 * **Joshua Nwokoye (Atoms)**
