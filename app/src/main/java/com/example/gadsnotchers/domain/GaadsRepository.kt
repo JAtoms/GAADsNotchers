@@ -21,7 +21,7 @@ class GaadsRepository(private val database: GaadsDatabase) {
             try {
                 val hours = gadsServiice.getHours().await()
                 database.gaadsDao.insertHours(*hours.asDataModel())
-                Log.d("Success", "Inserted successfully")
+
             } catch (e: Exception) {
                 Log.e("GaadsRepository", e.toString())
             }
@@ -33,7 +33,6 @@ class GaadsRepository(private val database: GaadsDatabase) {
             try {
                 val iQSkills = gadsServiice.getIq().await()
                 database.gaadsDao.insertIQ(*iQSkills.asDataModel())
-                Log.d("Success", "Inserted successfully")
             } catch (e: Exception) {
                 Log.e("GaadsRepository", e.toString())
             }

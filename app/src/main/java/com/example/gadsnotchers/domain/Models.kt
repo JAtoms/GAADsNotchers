@@ -13,10 +13,3 @@ data class HoursDataClass(
     val hours: Int,
     val name: String
 )
-
-data class ResponseDataClass(
-    val badgeUrl: String,
-    val country: String,
-    val hours: Int,
-    val name: String
-)

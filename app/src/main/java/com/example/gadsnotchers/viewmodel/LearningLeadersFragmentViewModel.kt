@@ -20,14 +20,6 @@ class LearningLeadersFragmentViewModel(application: Application) :
     private val database = GaadsDatabase.getInstance(application)
     private val gaaddsRepository = GaadsRepository(database)
 
-    val _firstName = MediatorLiveData<String>()
-    val firstNme : LiveData<String>
-    get() = _firstName
-
-    val emailAddress = MediatorLiveData<String>()
-    val lastName = MediatorLiveData<String>()
-    val linkToProject = MediatorLiveData<String>()
-
     init {
         uiScope.launch {
             gaaddsRepository.refreshHours()

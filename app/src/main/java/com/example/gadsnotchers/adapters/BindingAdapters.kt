@@ -28,11 +28,13 @@ fun bindImage(imageView: ImageView, imgUrl: String?) {
 @BindingAdapter("hoursDataClass")
 fun bindHourRecyclerView(recyclerview: RecyclerView, hoursDataClass: List<HoursDataClass>?) {
     val adapter = recyclerview.adapter as HoursRecyclerViewAdapter
+    adapter.notifyDataSetChanged()
     adapter.submitList(hoursDataClass)
 }
 
 @BindingAdapter("iQDataClass")
 fun iQRecyclerView(recyclerview: RecyclerView, iqDataClass: List<IQDataClass>?){
     val adapter = recyclerview.adapter as IQRecyclerViewAdapter
+    adapter.notifyDataSetChanged()
     adapter.submitList(iqDataClass)
 }

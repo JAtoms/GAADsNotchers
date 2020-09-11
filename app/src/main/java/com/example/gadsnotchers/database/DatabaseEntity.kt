@@ -10,8 +10,9 @@ data class HoursDatabaseEntity constructor(
     val badgeUrl: String,
     val country: String,
     val hours: Int,
-    @PrimaryKey
-    val name: String
+    val name: String,
+    @PrimaryKey(autoGenerate = true)
+    val sn: Int
 )
 
 // << Convert Database objects into HoursDataClass >>
@@ -30,9 +31,10 @@ fun List<HoursDatabaseEntity>.asHourModel(): List<HoursDataClass> {
 data class IQDatabaseEntity constructor(
     val badgeUrl: String,
     val country: String,
-    @PrimaryKey
     val name: String,
-    val score: Int
+    val score: Int,
+    @PrimaryKey(autoGenerate = true)
+    val sn: Int
 )
 
 // << Convert Database objects into IQDataClass >>

@@ -20,9 +20,10 @@ fun List<Hours>.asDataModel() : Array<HoursDatabaseEntity>{
     return map {
         HoursDatabaseEntity(
             badgeUrl = it.badgeUrl,
-            country = it.country,
+            country = "${it.hours} skill IQ score, Egypt",
             hours = it.hours,
-            name = it.internName
+            name = it.internName,
+            sn = 0
         )
     }.toTypedArray()
 }
@@ -38,9 +39,10 @@ fun List<SkillsIQ>.asDataModel() : Array<IQDatabaseEntity>{
     return map {
         IQDatabaseEntity(
             badgeUrl = it.badgeUrl,
-            country = it.country,
-            score = it.score,
-            name = it.name
+            country = "${it.score} hours, ${it.country}",
+            score =  it.score,
+            name = it.name,
+            sn = 0
         )
     }.toTypedArray()
 }

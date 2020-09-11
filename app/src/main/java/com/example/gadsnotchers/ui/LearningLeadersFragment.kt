@@ -39,7 +39,6 @@ class LearningLeadersFragment : Fragment() {
         binding.viewModel = leadersFragmentViewModel
         binding.learningRecyclerView.adapter = HoursRecyclerViewAdapter()
 
-
         binding.lifecycleOwner = this
         return binding.root
     }
