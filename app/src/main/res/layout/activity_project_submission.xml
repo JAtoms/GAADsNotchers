@@ -131,7 +131,7 @@
             app:layout_constraintTop_toTopOf="@+id/firstName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/email"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginTop="32dp"
@@ -147,7 +147,7 @@
             app:layout_constraintTop_toBottomOf="@+id/last_name" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/project_link"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginTop="32dp"
@@ -158,9 +158,9 @@
             android:paddingStart="12dp"
             android:hint="@string/project_link"
             android:text="@={viewModel.linkToProject}"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintEnd_toEndOf="@+id/email"
+            app:layout_constraintStart_toStartOf="@+id/email"
+            app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <Button
             android:id="@+id/submit_button"
@@ -173,9 +173,9 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName6"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName6"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
+            app:layout_constraintEnd_toEndOf="@+id/project_link"
+            app:layout_constraintStart_toStartOf="@+id/project_link"
+            app:layout_constraintTop_toBottomOf="@+id/project_link" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

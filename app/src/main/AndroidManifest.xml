@@ -18,14 +18,16 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/SplashThem"
             android:parentActivityName=".MainActivity">
+
+        </activity>
+
+        <activity android:name=".ui.ProjectSubmission">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.ProjectSubmission"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>

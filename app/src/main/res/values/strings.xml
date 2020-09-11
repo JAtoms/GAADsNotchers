@@ -13,4 +13,7 @@
     <string name="email_address">Email Address</string>
     <string name="project_link">Project on GITHUB (Link)</string>
     <string name="field_cannot_be_empty">Field cannot be empty</string>
+    <string name="incorrect_email_format">Incorrect email format</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="yes">Yes</string>
 </resources>

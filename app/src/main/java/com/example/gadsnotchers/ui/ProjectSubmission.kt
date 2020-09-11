@@ -28,13 +28,30 @@ class ProjectSubmission : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_project_submission)
+        binding = setContentView(this, R.layout.activity_project_submission)
         submissionViewModel = SubmissionViewModel(applicationContext)
         binding.viewModel = submissionViewModel
 
         submissionViewModel.errorFirstName.observe(this, Observer {
             binding.firstName.error = it
+            binding.firstName.requestFocus()
         })
+
+        submissionViewModel.errorEmailAddress.observe(this, Observer {
+            binding.email.error = it
+            binding.email.requestFocus()
+        })
+
+        submissionViewModel.errorLastName.observe(this, Observer {
+            binding.lastName.error = it
+            binding.lastName.requestFocus()
+        })
+
+        submissionViewModel.errorLinkToProject.observe(this, Observer {
+            binding.projectLink.error = it
+            binding.projectLink.requestFocus()
+        })
+
 
         tool_bar.setNavigationIcon(R.drawable.back_button)
         tool_bar.setNavigationOnClickListener(View.OnClickListener {
