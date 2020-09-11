@@ -4,6 +4,9 @@ import android.app.Dialog
 import android.content.Context
 import android.util.Log
 import android.util.Patterns
+import android.view.Window
+import android.widget.Button
+import android.widget.ImageView
 import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
@@ -32,18 +35,8 @@ class SubmissionViewModel(val context: Context) : ViewModel() {
     val lastName = ObservableField("")
     val linkToProject = ObservableField("")
 
-    // Dialogs
-    private val progressDialog = Dialog(context)
-
-    fun successDialog(){
-        progressDialog.setContentView(R.layout.dialog_confirm)
-        progressDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
-        progressDialog.show()
-    }
-
 
     // LiveData
-
     private val _errorFirstName = MutableLiveData<String>()
     val errorFirstName: LiveData<String>
         get() = _errorFirstName
@@ -60,16 +53,35 @@ class SubmissionViewModel(val context: Context) : ViewModel() {
     val errorLinkToProject: LiveData<String>
         get() = _errorLinkToProject
 
-    private val _dialogSuccessOrFailure = MutableLiveData<Boolean>()
-    val dialogSuccessOrFailure : LiveData<Boolean>
-    get() = _dialogSuccessOrFailure
+
+    private val _firstName = MutableLiveData<String>()
+    val mFirstName: LiveData<String>
+        get() = _firstName
+
+    private val _lastName = MutableLiveData<String>()
+    val mLastName: LiveData<String>
+        get() = _lastName
+
+    private val _emailAddress = MutableLiveData<String>()
+    val mEmailAddress: LiveData<String>
+        get() = _emailAddress
+
+    private val _linkToProject = MutableLiveData<String>()
+    val mLinkToProject: LiveData<String>
+        get() = _linkToProject
+
+    private val _triggerDialog = MutableLiveData<Boolean>()
+    val triggerDialog: LiveData<Boolean>
+        get() = _triggerDialog
+
+    fun setTriggeredDialogToFalse(){
+        _triggerDialog.value = false
+    }
 
 
     fun submitResponse() {
-        successDialog()
         validationChecks()
     }
-
 
     private fun validationChecks() {
         when {
@@ -97,12 +109,11 @@ class SubmissionViewModel(val context: Context) : ViewModel() {
             }
 
             else -> {
-                runResponse(
-                    emailAddress.get().toString().trim(),
-                    firstName.get().toString().trim(),
-                    lastName.get().toString().trim(),
-                    linkToProject.get().toString().trim()
-                )
+                _triggerDialog.value = true
+                _firstName.value = firstName.get().toString().trim()
+                _lastName.value = lastName.get().toString().trim()
+                _errorEmailAddress.value = emailAddress.get().toString().trim()
+                _errorLinkToProject.value = linkToProject.get().toString().trim()
             }
         }
     }
@@ -121,17 +132,16 @@ class SubmissionViewModel(val context: Context) : ViewModel() {
                 linkProject
             ).enqueue(object : Callback<Void> {
                 override fun onFailure(call: Call<Void>, t: Throwable) {
-                    _dialogSuccessOrFailure.value = false
+
                 }
 
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                    _dialogSuccessOrFailure.value = true
-                    successDialog()
-                    response.isSuccessful
+
                 }
             })
         }
     }
+
 
     override fun onCleared() {
         viewModelJob.cancel()

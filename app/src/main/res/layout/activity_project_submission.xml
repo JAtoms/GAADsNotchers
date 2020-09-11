@@ -22,7 +22,7 @@
             android:layout_height="250dp"
             android:layout_marginEnd="244dp"
             android:layout_marginBottom="524dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/ash_circle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -89,7 +89,7 @@
             android:layout_height="450dp"
             android:layout_marginStart="188dp"
             android:layout_marginTop="480dp"
-            android:background="@drawable/circle"
+            android:background="@drawable/ash_circle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

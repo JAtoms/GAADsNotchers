@@ -6,6 +6,7 @@
     <color name="goldRange">#FBAB34</color>
     <color name="black">#FF000000</color>
     <color name="ash">#1C1C1C</color>
+    <color name="green">#028E0A</color>
     <color name="white">#FFFFFFFF</color>
     <color name="offWhite">#8DFFFFFF</color>
 </resources>
